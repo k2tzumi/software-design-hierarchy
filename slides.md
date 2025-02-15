@@ -983,7 +983,8 @@ transition: fade
 ビジネスの変化に追従できるソフトウェア設計が求められる
 
 ---
-layout: fact
+layout: cover
+background: big-ball-of-mud.png
 transition: fade
 ---
 
