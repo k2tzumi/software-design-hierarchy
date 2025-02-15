@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.0.1](https://github.com/k2tzumi/software-design-hierarchy/commits/v0.0.1) - 2025-02-15
+- Init by @k2tzumi in https://github.com/k2tzumi/software-design-hierarchy/pull/16
+- Bump @slidev/cli from 0.50.0 to 51.1.0 by @dependabot in https://github.com/k2tzumi/software-design-hierarchy/pull/9
+- Bump @iconify-json/material-symbols from 1.2.12 to 1.2.14 by @dependabot in https://github.com/k2tzumi/software-design-hierarchy/pull/11
+
 ## [v0.1.8](https://github.com/k2tzumi/slidev-boilerplate/compare/v0.1.7...v0.1.8) - 2025-01-04
 - Bump playwright-chromium from 1.48.2 to 1.49.0 by @dependabot in https://github.com/k2tzumi/slidev-boilerplate/pull/38
 - Bump @iconify-json/simple-icons from 1.2.11 to 1.2.13 by @dependabot in https://github.com/k2tzumi/slidev-boilerplate/pull/39
