@@ -137,13 +137,41 @@ SNSでシェアする際には、ハッシュタグ「#phpcon_nagoya #s」をつ
 
 ---
 layout: default
-transition: fade-out
+transition: slide-up
 ---
 
 # 開発者が直面する「設計に関する情報過多」
 この Post を見て「それな」と思ったのが、本セッションをしようと思い立ったきっかけになっています
 
 <Tweet id="1836904526269514233" />
+
+---
+layout: two-cols-header
+transition: fade-out
+---
+
+# 今日お話すること・話さないこと
+狙いは「設計概念を体系的に理解し、個々のパターンを把握するための助けとする」です
+
+::left::
+
+# 🚫セッションでは扱わないこと
+
+- 個々の設計パターンの詳細な解説
+- 具体的な実装方法やコード例の紹介
+- 特定のアーキテクチャの採用判断基準
+
+<div class="speech-bubble">
+個別の設計パターンやアーキテクチャの詳細は、巻末の参考資料参照📚
+</div>
+
+::right::
+
+# ✨セッションで得られること
+
+- 設計に関する概念を体系的に理解する視点
+- 各設計概念の位置づけと相互の関係性
+- 設計概念の発展背景と解決してきた課題の理解
 
 ---
 
@@ -158,6 +186,8 @@ transition: fade-out
 ドキュメントやブログで目にする  
 アーキテクチャやパターンの数々
 
+---
+transition: fade
 ---
 
 # 開発者の本音
@@ -181,10 +211,17 @@ transition: fade-out
 </v-click>
 
 ---
+layout: fact
+transition: fade
+---
 
-# ぜんぜんわからない
+# ぜんぜんわからない 🤔
 
-<Tweet id="1878630740818337816" />
+---
+layout: fact
+---
+
+# 俺達は雰囲気で（ry
 
 ---
 
@@ -215,7 +252,7 @@ transition: slide-up
   * 様々な設計手法の中から、どれを選択すべきか判断できない
   * 各設計手法が生まれた背景や解決しようとした問題の理解が浅い
 * 概念は互いに関連しており、体系的に理解することで、より効果的に活用することができる
-* 概念の適用範囲や限界を理解し、状況に応じて適切な選択ができる
+* 概念の適用範囲や限界を理解し、状況に応じて適切な選択を行う為
 
 <br />
 <v-click>
@@ -321,7 +358,7 @@ MVC, ActiveRecord 等
 <v-click>
 
 <div class="speech-bubble">
-中程度の抽象度でモジュールやコンポーネントレベルの設計パターン
+抽象度が中程度なモジュールやコンポーネントレベルの設計パターン
 </div>
 
 </v-click>
@@ -356,6 +393,8 @@ Layered, Event-Driven, Microservices 等
 </v-click>
 
 ---
+transition: fade
+---
 
 # 設計に関する3つの概念カテゴリ比較
 抽象度が低→高、影響度も小→大となる
@@ -366,12 +405,17 @@ Layered, Event-Driven, Microservices 等
 | アーキテクチャパターン | モジュール/コンポーネントレベル | 中間（再利用可能な解決策）  | 中規模な影響          |
 | アーキテクチャスタイル | システム/アプリケーションレベル | 抽象的（全体的な方針）      | 全体的な影響          |
 
-<br />
+---
+
+# 抽象度レベルピラミッド
+
+<img src="./architecture_pyramid_diagram.svg" class="h-85" />
+
 <v-click>
 
 <div class="speech-bubble">
 抽象度の上昇に伴い、影響範囲が広がっていく<br />
-スタイルは変更コストが高く、決定の重要性が増す
+スタイルは変更コストが高く、決定の重要度も高い
 </div>
 
 </v-click>
@@ -469,6 +513,17 @@ layout: two-cols-header
 </v-click>
 
 </Transform>
+
+---
+
+# 設計原則による課題解決マトリクス
+SOLID 原則での課題解決事例
+
+| 課題 | 単一責任原則（SRP） | オープン/クローズド原則（OCP） | リスコフの置換原則（LSP） | インターフェース分離原則（ISP） | 依存性逆転原則（DIP） |
+|------|---------------------|--------------------------------|---------------------------|--------------------------------|----------------------|
+| コードの複雑性 | クラスの目的を明確化 | 継承やポリモーフィズムを活用 | 一貫した振る舞いの提供 | 必要な機能だけを提供 | 抽象化と依存関係の最小化 |
+| 変更への対応 | 変更理由の一つに限定 | 新機能追加時に既存コードを変更しない | クライアントコードの変更を最小限に | インターフェースの分離 | 依存関係の逆転による柔軟性 |
+| 品質向上 | 高凝集を実現 | 変更影響範囲の最小化 | クライアントコードとの結合を維持 | 高凝集のインターフェース | モジュール間の独立性向上 |
 
 
 ---
@@ -884,6 +939,9 @@ Ruby on Railsの普及<br />
 </v-click>
 
 ---
+transition: fade
+---
+
 
 # 変化の本質
 変化のまとめ
@@ -895,13 +953,17 @@ Ruby on Railsの普及<br />
 | チーム構造    | 少人数チーム                  | 大規模チーム               | 分散自律チーム                  |
 | アーキテクチャ | モノリシック                  | コンポーネントベース        | マイクロサービス               |
 
-<br />
+---
+
+# ソフトウェア開発の進化
+
+<img src="./software_development_evolution.svg" class="h-85" />
 
 <v-click>
 
 <div class="speech-bubble">
-よりリッチ、大規模化<br />  
-考えるこも増えて複雑化する中で開発の難易度も上がり続けている
+ソフトウェアはよりリッチで大規模化する<br />  
+考慮する要素も増え、複雑さが増し、開発の難易度も高まり続けている
 </div>
 
 </v-click>
@@ -931,14 +993,14 @@ layout: fact
 transition: fade
 ---
 
-# なんで変化していったの？
+# なんで変化していったの？🤔
 
 ---
 layout: fact
 transition: fade
 ---
 
-# ビジネスや環境の変化に追従するため
+# ビジネスや環境の変化に追従するため📈
 現在のソフトウェア開発と似ていませんか？
 
 ---
@@ -946,7 +1008,7 @@ layout: fact
 transition: fade
 ---
 
-# 変化し続けるものを作り続けている
+# 変化し続けるものを作り続けている🛠️
 設計概念もその中で生み出された
 
 ---
@@ -954,11 +1016,12 @@ layout: fact
 transition: fade
 ---
 
-# 目的も同じ
+# 目的も同じ🎯
 ビジネスの変化に追従できるソフトウェア設計が求められる
 
 ---
-layout: fact
+layout: cover
+background: big-ball-of-mud.png
 transition: fade
 ---
 
@@ -991,7 +1054,7 @@ transition: slide-up
 layout: center
 ---
 
-# いつ、何を考えるか？
+# いつ、何を考えるか？💭
 
 ---
 layout: section
@@ -1004,7 +1067,7 @@ transition: fade
 layout: fact
 ---
 
-# 常に意識し続けるもの
+# <span v-mark="{ at: 1, color: 'orange', type: 'circle', strokeWidth: 5 }">常に意識</span>し続けるもの🧠
 
 ---
 
@@ -1028,14 +1091,14 @@ layout: fact
 transition: fade
 ---
 
-# フレームワーク全盛時代にイチから考えることは少ない
+# フレームワーク全盛時代にイチから考えることは少ない🧩
 
 ---
 layout: fact
 transition: fade
 ---
 
-# アーキテクチャパターンは戦術的に扱う
+# アーキテクチャパターンは<span v-mark="{ at: 1, color: '#FCAF17', type: 'highlight', iterations: 3 }">戦術的</span>に扱う🏗️
 既に誰かが通ってきた道
 
 ---
@@ -1043,7 +1106,7 @@ layout: fact
 transition: fade
 ---
 
-# フレームワーク選定時に概ね決まる
+# フレームワーク選定時に概ね決まる☑️
 
 ---
 
@@ -1070,7 +1133,7 @@ layout: fact
 transition: fade
 ---
 
-# アーキテクチャスタイルは戦略的に扱う
+# アーキテクチャスタイルは<span v-mark="{ at: 1, color: '#FCAF17', type: 'highlight', iterations: 3 }">戦略的</span>に扱う💡
 戦略は各システム・ビジネスの事情から生まれるもの
 
 ---
@@ -1078,7 +1141,7 @@ layout: fact
 transition: fade
 ---
 
-# 判断が一番むずかしい
+# 判断が一番むずかしい😵‍💫
 なぜなら最も抽象度が高い設計判断になる。決定の影響が全体に及ぶ為
 
 ---
@@ -1086,7 +1149,15 @@ layout: fact
 transition: fade
 ---
 
-# プロジェクト初期は過度に目指さない
+# 理想は「僕が考えた最強のアーキテクチャ」を考え抜いて作り込むこと💪
+オレオレアーキテクチャを熟成したものがスタイルになる
+
+---
+layout: fact
+transition: fade
+---
+
+# 但し、プロジェクト初期は過度に目指さない！⚖️
 コアドメインの見極めが重要
 
 ---
@@ -1094,7 +1165,7 @@ layout: fact
 transition: fade
 ---
 
-# 原則ベースの継続的改善していくのがいいのでは？
+# 原則ベースの継続的改善していくのがいいのでは？🧭
 
 ---
 layout: full
@@ -1242,6 +1313,50 @@ Key Message
 - 設計原則という基礎が、より大きな設計の質を支える
 - アーキテクチャは自然な帰結として導かれるもの
 - 実践を通じた継続的な学びと改善を心がける
+
+---
+layout: default
+transition: fade-out
+---
+
+# 進化的アーキテクチャとなる
+変化を前提としたシステム設計のアプローチ
+
+<img src="./architecture_levels_cone_diagram.svg" class="h-85" />
+
+<v-click>
+
+<div class="speech-bubble">
+らせん状に進化するイメージ
+</div>
+
+</v-click>
+
+---
+layout: image-right
+image: section8.png
+class: mt-45
+backgroundSize: 20em 60%
+transition: slide-up
+---
+
+# 付録
+
+---
+
+# 参考資料 & 書籍
+紹介した書籍や、学習に使えるページ
+
+【書籍】
+- [「TECHNICAL MASTER はじめてのPHP エンジニア入門編」](https://www.shuwasystem.co.jp/book/9784798073224.html)
+- [Pattern-Oriented Software Architecture](https://www.amazon.co.jp/Pattern-Oriented-Software-Architecture-System-Patterns/dp/0471958697)
+- [Patterns of Enterprise Application Architecture](https://www.amazon.co.jp/-/en/Martin-Fowler/dp/0321127420)
+- [Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions](https://www.amazon.co.jp/Enterprise-Integration-Patterns-Designing-Addison-Wesley/dp/0321200683)
+
+【資料】
+- [Patterns of Enterprise Application Architecture - Martin Fowler's Bliki (ja)](https://bliki-ja.github.io/pofeaa/)
+- [Table of Contents - Enterprise Integration Patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging/toc.html)  
+
 
 ---
 layout: end
