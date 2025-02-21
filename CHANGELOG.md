@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.3](https://github.com/k2tzumi/software-design-hierarchy/compare/v0.0.2...v0.0.3) - 2025-02-21
+- Append image by @k2tzumi in https://github.com/k2tzumi/software-design-hierarchy/pull/20
+
 ## [v0.0.2](https://github.com/k2tzumi/software-design-hierarchy/compare/v0.0.1...v0.0.2) - 2025-02-15
 - Bump @iconify-json/simple-icons from 1.2.18 to 1.2.24 by @dependabot in https://github.com/k2tzumi/software-design-hierarchy/pull/15
 
